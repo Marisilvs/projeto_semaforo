@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/semaforo.css">
+    <title>Atividade semaforo</title>
+</head>
+
+<body>
+    <h1 id="titulo">Semafomarys</h1>
+    <div id="semaforo">
+        <div id="vermelho" class="circulo vermelho opacidade">
+            <p id="redp"></p>
+        </div>
+        <div id="amarelo" class="circulo amarelo opacidade"></div>
+        <div id="verde" class="circulo verde opacidade"></div>
+    </div>
+    <input type="button" value="Iniciar" onclick="iniciar()" id="inicio">
+    <!--<input type="button" value="Parar" onclick="parar()" id="parar">-->
+    <input type="button" value="Manutenção" id="manutencao" onclick="manutencao()">
+    <!--<input type="button" value="parar manutencao" id="pararmanu" onclick="pararmanu()">-->
+    <script>
+
+
+
+        medidas = {
+            verde: 20,
+            vermelho: 10,
+            amarelo: 4,
+            inicia: document.getElementById('inicio'),
+            flag: false,
+            flagMan: true
+        }
+       /* var pararmanu = function () {
+            clearInterval(timeMan)
+            amare.classList.add('opacidade')
+
+        }*/
+        var manutencao = function () {
+            if (medidas.flagMan) {
+                amare = document.getElementById('amarelo');
+                cont = 1
+                timeMan = setInterval(function () {
+                    cont++
+                    if (cont % 2 == 0) {
+                        amare.classList.remove('opacidade')
+                    }
+                    else {
+                        amare.classList.add('opacidade')
+                    }
+                }, 1000)
+
+                parar()
+            } else {
+                return
+            }
+
+
+
+
+        }
+
+        para = document.getElementById('parar')
+        var parar = function () {
+            medidas.inicia.disabled = false
+
+            clearTimeout(valor)
+            verm.classList.add('opacidade')
+            verd.classList.add('opacidade')
+            amare.classList.add('opacidade')
+
+        }
+        var iniciar = function () {
+            medidas.inicia.disabled = true
+            verm = document.getElementById('vermelho');
+            amare = document.getElementById('amarelo');
+            verd= document.getElementById('verde');
+
+            valor = setInterval(function () {
+                if (medidas.vermelho > 0) {
+                    verm.innerText = medidas.vermelho;
+                    verm.classList.remove('opacidade')
+                    medidas.vermelho--
+
+                }
+                else {
+                    verm.innerText = ' '
+                    verm.classList.add('opacidade')
+                    if (medidas.verde > 0) {
+                        verde.classList.remove('opacidade')
+                        verde.innerText = medidas.verde;
+                        medidas.verde--;
+                        console.log(medidas.verde)
+                    }
+                    else {
+                        verde.classList.add('opacidade')
+                        verde.innerText = ' ';
+
+                        if (medidas.amarelo > 0) {
+                            amare.classList.remove('opacidade')
+                            amare.innerText = medidas.amarelo;
+
+                            medidas.amarelo--;
+                            console.log(medidas.amarelo)
+
+                        }
+                        else {
+                            amare.classList.add('opacidade')
+                            amare.innerText = ' ';
+                            medidas.vermelho = 10;
+                            verm.innerText = medidas.vermelho
+
+                            verm.classList.remove('opacidade')
+
+                            medidas.amarelo = 4;
+                            medidas.verde = 20;
+                        }
+                    }
+
+                }
+
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

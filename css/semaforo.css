@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+}
+#titulo{
+ 
+    margin-left: 350px;
+}
+#semaforo{
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 40px;
+    height: 650px;
+    width: 290px;
+    background-color:black;
+    margin-left: 20%;
+}
+.circulo{
+    margin-top: 12px;
+    width: 195px;
+    height: 195px;
+    border-radius: 1000px;
+    margin-left: 38px;
+    
+}
+.verde{
+    background-color: green;
+}
+.vermelho{
+    background-color: red;
+}
+.amarelo{
+    background-color: yellow;
+}
+.opacidade{
+    opacity: 20%;
+}
+#inicio{
+    margin-top: 20px;
+    height: 50px;
+    width: 144px;
+    margin-left: 305px;
+}
+/*
+#parar{
+    height: 50px;
+    width: 144px;
+    margin-right: 50px;
+}*/
+#manutencao{
+    height: 50px;
+    width: 144px;
+    margin-right: 50px;
+}
