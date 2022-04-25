@@ -10,26 +10,67 @@ html, body{
     font-family: sans-serif;
 }
 #titulo{
- 
-    margin-left: 350px;
+    margin-left: 330px;
+    font-size: 35px;
 }
+/*semaforo para carros*/
 #semaforo{
     border-radius: 20px;
     padding: 10px;
     margin-top: 40px;
-    height: 650px;
-    width: 290px;
+    height: 500px;
+    width: 230px;
     background-color:black;
     margin-left: 20%;
 }
 .circulo{
-    margin-top: 12px;
-    width: 195px;
-    height: 195px;
+    padding: 20px;
+    margin-top: 17px;
+    width: 130px;
+    height: 130px;
     border-radius: 1000px;
-    margin-left: 38px;
+    margin-left: 40px;
     
 }
+
+/*semaforo para pedestres*/
+#semaforo1{
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 40px;
+    height: 350px;
+    width: 230px;
+    background-color:black;
+    margin-left: 20%;
+}
+.circulo2{
+    padding: 20px;
+    margin-top: 17px;
+    width: 330px;
+    height: 130px;
+    border-radius: 1000px;
+    margin-left: 40px;
+    
+}
+.verde2{
+    background-color: green;
+}
+.vermelho2{
+    background-color: red;
+}
+.opacidade{
+    opacity: 20%;
+}
+/*
+#pedestres{
+    border-radius: 20px;
+
+    
+    height: 200px;
+    width: 290px;
+    background-color:black;
+    margin-left: 20%;
+}*/
 .verde{
     background-color: green;
 }
@@ -43,10 +84,18 @@ html, body{
     opacity: 20%;
 }
 #inicio{
-    margin-top: 20px;
-    height: 50px;
-    width: 144px;
+    margin-top: 120px;
+    border-radius: 15px;
+    height: 40px;
+    width: 134px;
+   
     margin-left: 305px;
+}
+#ficar_vermelho{
+    background-color: red;
+}
+#ficar_vermelho{
+    background-color: red;
 }
 /*
 #parar{
@@ -55,7 +104,33 @@ html, body{
     margin-right: 50px;
 }*/
 #manutencao{
-    height: 50px;
-    width: 144px;
+    border-radius: 15px;
+    height: 40px;
+    width: 134px;
     margin-right: 50px;
+}
+
+#pedestres{
+  
+    border-radius: 15px;
+    height: 40px;
+    width: 134px;
+    margin-right: 50px;
+}
+#pedestres:hover{
+    background-color: greenyellow;
+}
+#inicio{
+    border-radius: 15px;
+}
+#inicio:hover{
+   
+    background-color: green;
+}
+#manutencao{
+    border-radius: 15px;
+}
+#manutencao:hover{
+   
+    background-color: yellow;
 }

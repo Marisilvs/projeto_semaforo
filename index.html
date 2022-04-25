@@ -11,6 +11,7 @@
 
 <body>
     <h1 id="titulo">Semafomarys</h1>
+    <!--semaforo para carros-->
     <div id="semaforo">
         <div id="vermelho" class="circulo vermelho opacidade">
             <p id="redp"></p>
@@ -18,12 +19,23 @@
         <div id="amarelo" class="circulo amarelo opacidade"></div>
         <div id="verde" class="circulo verde opacidade"></div>
     </div>
+    <!--semadoro para pedestres-->
+    <div id="semaforo1">
+        <div id="vermelho" class="circulo vermelho opacidade">
+            <p id="redp"></p>
+        </div>
+        <div id="verde" class="circulo verde opacidade"></div>
+    </div>
+    <div id="semaforope"></div>
+        <!--<div id="circulope"></div>-->
+            <div id="ficar_vermelho"></div>
+            <div id="ficar_verde"></div>
     <input type="button" value="Iniciar" onclick="iniciar()" id="inicio">
     <!--<input type="button" value="Parar" onclick="parar()" id="parar">-->
     <input type="button" value="Manutenção" id="manutencao" onclick="manutencao()">
     <!--<input type="button" value="parar manutencao" id="pararmanu" onclick="pararmanu()">-->
+    <input type="button" value="Pedestres" id="pedestres" onclick="pedestres()">
     <script>
-
 
 
         medidas = {
@@ -32,14 +44,41 @@
             amarelo: 4,
             inicia: document.getElementById('inicio'),
             flag: false,
-            flagMan: true
+            flagMan: true,
+            pedestres: document.getElementById('pedestre')
         }
        /* var pararmanu = function () {
             clearInterval(timeMan)
             amare.classList.add('opacidade')
 
         }*/
+        
+        
+        
+        
+        var pedestres = function () {
+    if (medidas.flagMan) {
+        amare = document.getElementById('amarelo');
+        cont = 1
+        timeMan = setInterval(function () {
+            cont++
+            if (cont % 2 == 0) {
+                amare.classList.remove('opacidade')
+               
+            }
+            if (medidas.flagMan){
+            clearTimeout(valor);
+            verm.classList.add('opacidade')
+            }
+        }, 1000)
+
+        parar()
+    } else {
+        return
+    }
+}
         var manutencao = function () {
+            
             if (medidas.flagMan) {
                 amare = document.getElementById('amarelo');
                 cont = 1
@@ -51,21 +90,17 @@
                     else {
                         amare.classList.add('opacidade')
                     }
-                }, 1000)
+                }, 100)
 
                 parar()
             } else {
                 return
             }
-
-
-
-
         }
 
         para = document.getElementById('parar')
         var parar = function () {
-            medidas.inicia.disabled = false
+            medidas.inicia.disabled = false;
 
             clearTimeout(valor)
             verm.classList.add('opacidade')
@@ -78,14 +113,17 @@
             verm = document.getElementById('vermelho');
             amare = document.getElementById('amarelo');
             verd= document.getElementById('verde');
-
+            
             valor = setInterval(function () {
                 if (medidas.vermelho > 0) {
                     verm.innerText = medidas.vermelho;
                     verm.classList.remove('opacidade')
-                    medidas.vermelho--
+                    medidas.vermelho--;
+
+
 
                 }
+
                 else {
                     verm.innerText = ' '
                     verm.classList.add('opacidade')
@@ -123,6 +161,7 @@
                 }
 
             }, 1000)
+
         }
     </script>
 </body>
